@@ -9,3 +9,8 @@ class ContactMe(models.Model):
 
     def __str__(self):
         return "{} | {}".format(self.name,self.email)
+
+class Github(models.Model):
+    project_name = models.CharField(max_length=500)
+    image=models.ImageField(upload_to="app/uploads")
+    link=models.CharField(max_length=100,default="null")

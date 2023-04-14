@@ -66,22 +66,23 @@
         </div>
     </section>
 <!-- Portfolio -->
+
     <div class="container-fluid portfolio-container-holder content-section" id="portfolio">
 		<div class="portfolio-container container">
-			<h1 class="text-center">My Portfolio</h1>
+			<h1 class="text-center">Portfolio</h1>
       <hr class="star-portfolio">
-			<div class="row">
-				
+      <div class="row">
+        {% for i in data %}
 				<div class="col-md-6 col-xs-12 col-sm-6 portfolio-card-holder">
 					<div class=" portfolio-card">
-						<img src="https://cdn2.hubspot.net/hubfs/145335/responsive-vs-adaptive-design-compressor.jpg" alt="Portfolio" class="img-responsive portfolio-img">
+						<a href={{i.link}}><img src={{i.image.url}} alt="Portfolio" class="img-responsive portfolio-img">
 
 						<div class="portfolio-img-desc">
-							<p>Lorem ipsum dolor sit amet</p>
-						</div>			
+							<p>{{i.project_name}}</p>
+						</div>		
 					</div>
 				</div>
-				
+        {%  endfor %}	
 			</div>
 		</div>
 	</div>
